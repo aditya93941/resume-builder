@@ -45,7 +45,6 @@ header h1 {
   font-size: 2.5rem;
 }
 
-
 .hero-section {
   text-align: center;
   padding: 4rem 2rem;
@@ -76,7 +75,6 @@ header h1 {
   background-color: #2ecc71;
 }
 
-
 .templates-section {
   background-color: #f9f9f9;
   padding: 3rem 2rem;
@@ -92,6 +90,7 @@ header h1 {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .template {
@@ -101,8 +100,14 @@ header h1 {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 200px;
-  height: 300px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
 }
 
 .template:hover {
@@ -122,6 +127,17 @@ header h1 {
 
 .template.selected img {
   border: 2px solid #27ae60;
+}
+
+.template p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.template.selected p {
+  font-weight: bold;
+  color: #27ae60;
 }
 
 .features-section {
@@ -232,27 +248,10 @@ footer p {
 
   .templates {
     flex-direction: column;
+    gap: 1rem;
   }
 }
 
-/* Common Styles for all Templates */
-.resume-preview {
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-}
-
-.resume-header h3 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.resume-header p {
-  font-size: 1rem;
-}
-
-/* Template 1 - Classic Layout (Vertical) */
 .resume-preview.template1 .resume-header {
   text-align: center;
 }
@@ -265,7 +264,6 @@ footer p {
   margin-bottom: 20px;
 }
 
-/* Template 2 - Two-Column Layout */
 .resume-preview.template2 .resume-body {
   display: flex;
   justify-content: space-between;
@@ -280,7 +278,6 @@ footer p {
   margin-bottom: 20px;
 }
 
-/* Template 3 - Horizontal Layout */
 .resume-preview.template3 .resume-header {
   display: flex;
   justify-content: space-between;
@@ -303,14 +300,13 @@ footer p {
   margin-bottom: 20px;
 }
 
-/* Templates Section (Select Template) */
 .templates-section {
   margin: 20px 0;
 }
 
 .templates .template {
   display: inline-block;
-  width: 100px;
+  width: 220px;
   text-align: center;
   margin-right: 20px;
   cursor: pointer;
