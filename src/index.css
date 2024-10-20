@@ -1,13 +1,338 @@
 body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3, h4 {
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+header {
+  background-color: #27ae60;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #e0f7fa;
+}
+
+.hero-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-section button {
+  background-color: #27ae60;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.hero-section button:hover {
+  background-color: #2ecc71;
+}
+
+
+.templates-section {
+  background-color: #f9f9f9;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.templates-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.templates {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.template {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 300px;
+  transition: transform 0.3s ease;
+}
+
+.template:hover {
+  transform: translateY(-5px);
+}
+
+.template img {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.template.selected {
+  border-color: #27ae60;
+}
+
+.template.selected img {
+  border: 2px solid #27ae60;
+}
+
+.features-section {
+  padding: 4rem 2rem;
+  background-color: #f4f4f4;
+}
+
+.features-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.features-section li {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.testimonials-section {
+  padding: 4rem 2rem;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+}
+
+.testimonials-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+}
+
+.resume-form, .resume-preview {
+  width: 45%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resume-preview {
+  background-color: #f9f9f9;
+}
+
+.resume-preview h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+form div {
+  margin-bottom: 1.5rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 100px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
+
+  .resume-form, .resume-preview {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .features-section ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .templates {
+    flex-direction: column;
+  }
+}
+
+/* Common Styles for all Templates */
+.resume-preview {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.resume-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.resume-header p {
+  font-size: 1rem;
+}
+
+/* Template 1 - Classic Layout (Vertical) */
+.resume-preview.template1 .resume-header {
+  text-align: center;
+}
+
+.resume-preview.template1 .resume-body {
+  display: block;
+}
+
+.resume-preview.template1 .section {
+  margin-bottom: 20px;
+}
+
+/* Template 2 - Two-Column Layout */
+.resume-preview.template2 .resume-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume-preview.template2 .left-column,
+.resume-preview.template2 .right-column {
+  width: 48%;
+}
+
+.resume-preview.template2 .section {
+  margin-bottom: 20px;
+}
+
+/* Template 3 - Horizontal Layout */
+.resume-preview.template3 .resume-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume-preview.template3 .header-left {
+  flex: 1;
+}
+
+.resume-preview.template3 .header-right {
+  text-align: right;
+  flex: 1;
+}
+
+.resume-preview.template3 .resume-body {
+  display: block;
+}
+
+.resume-preview.template3 .section {
+  margin-bottom: 20px;
+}
+
+/* Templates Section (Select Template) */
+.templates-section {
+  margin: 20px 0;
+}
+
+.templates .template {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.templates .template img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+
+.templates .template.selected img {
+  border-color: #4CAF50;
+}
+
+.templates .template p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.templates .template.selected p {
+  font-weight: bold;
+  color: #4CAF50;
 }
